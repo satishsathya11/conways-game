@@ -26,8 +26,8 @@ class OpratorBlock extends React.Component {
 			<div>
 				<OpratorButton oprator="+" handleClick={this.handleFun}/>
 				<OpratorButton oprator="-" handleClick={this.handleFun}/>
-				<OpratorButton oprator="x" handleClick={this.handleFun}/><br/>
-				<OpratorButton oprator="÷" handleClick={this.handleFun}/>
+				<OpratorButton oprator="*" handleClick={this.handleFun}/><br/>
+				<OpratorButton oprator="/" handleClick={this.handleFun}/>
 				<OpratorButton oprator="=" handleClick={this.handleResult}/>
 				<OpratorButton oprator="AC" handleClick={this.handleClear}/>
 				
