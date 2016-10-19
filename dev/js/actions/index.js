@@ -1,41 +1,19 @@
-export const addition = (oprator) => {
+export const opratorFun = (oprator) => {
   return {
-    type: 'ADDITION',
+    type: 'OPRATORFUN',
     payload:oprator
   }
 }
 
-export const substraction = (oprator) => {
-  return {
-    type: 'SUBSTRACTION',
-    payload:oprator
-  }
-}
-
-export const multiplication = (oprator) => {
-  return {
-    type: 'MULTIPLICATION',
-    payload:oprator
-  }
-}
-
-export const divide = (oprator) => {
-  return {
-    type: 'DIVIDE',
-    payload:oprator
-  }
-}
-
-export const equal = (oprator) => {
+export const equal = () => {
   return {
     type: 'EQUAL',
-    payload:oprator
   }
 }
-export const clear = (oprator) => {
+export const clearDisplay = (val) => {
   return {
     type: 'CLEAR',
-    payload:oprator
+    payload:val
   }
 }
 export const clickNum = (num) => {
