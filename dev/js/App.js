@@ -6,7 +6,7 @@ import Display from './containers/display.js'
 class App extends React.Component {
 	render() {
       return (
-			  <div>
+			  <div>	 	 
 			  	<Display/>
 			    <NumberBlock />
 			    <OpratorBlock />			    

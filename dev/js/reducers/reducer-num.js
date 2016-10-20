@@ -1,12 +1,15 @@
 const initialState = {
-  num1:0,
-  num2:0,
+  num1: 0,
+  num2: 0,
   oprator: null,
   result:0
 }
 
 const calculated = (n1, n2, op) => {
-  return eval(n1 + op + n2);
+  if (n2 && n1 && op) {
+    return eval(n1 + op + n2);
+  }
+  return n1 || n2;
 }
 
 const reducerNum = (state = initialState, action) => {
@@ -38,7 +41,18 @@ const reducerNum = (state = initialState, action) => {
         num1: action.payload,
         num2: action.payload,
         result:action.payload,
-        oprator:null,
+        oprator:null
+      });
+    case 'BACK':
+      if(state.oprator){
+      return Object.assign({}, state, {
+        num2:Math.floor(state.num2/10),
+        result:Math.floor(state.num2/10)
+      });
+     }
+      return Object.assign({}, state, {
+          num1:Math.floor(state.num1/10),
+          result:Math.floor(state.num1/10)
       });
       
   

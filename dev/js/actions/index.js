@@ -22,3 +22,8 @@ export const clickNum = (num) => {
     payload:num
   }
 }
+export const backspace = () => {
+  return {
+    type: 'BACK'
+  }
+}

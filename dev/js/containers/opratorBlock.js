@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux';
-import {equal,clearDisplay,opratorFun} from '../actions/index.js'
+import {equal,clearDisplay,opratorFun,backspace} from '../actions/index.js'
 import OpratorButton from '../components/OpratorButton.js';
 
 class OpratorBlock extends React.Component {
@@ -10,6 +10,8 @@ class OpratorBlock extends React.Component {
 		 this.handleResult = this.handleResult.bind(this);
 		 this.handleClear = this.handleClear.bind(this);
 		 this.handleFun = this.handleFun.bind(this);
+		 this.handleBackspace = this.handleBackspace.bind(this);
+	
 	}
 	handleResult(){
 	    console.log('calculate');
@@ -17,6 +19,10 @@ class OpratorBlock extends React.Component {
 	}
 	handleClear(val){
 	    this.props.clearDisplay(0)
+	}
+	
+	handleBackspace(){
+		this.props.backspace()
 	}
 	handleFun(val){
 		this.props.opratorFun(val)
@@ -30,6 +36,9 @@ class OpratorBlock extends React.Component {
 				<OpratorButton oprator="/" handleClick={this.handleFun}/>
 				<OpratorButton oprator="=" handleClick={this.handleResult}/>
 				<OpratorButton oprator="AC" handleClick={this.handleClear}/>
+				<OpratorButton oprator="C" handleClick={this.handleBackspace}/>
+				
+
 				
 			</div>
 		);
@@ -39,6 +48,7 @@ class OpratorBlock extends React.Component {
 function matchDispatchToProps(dispatch){
     return bindActionCreators({ equal:equal,
     							clearDisplay:clearDisplay,
-    							opratorFun:opratorFun}, dispatch);
+    							opratorFun:opratorFun,
+    							backspace:backspace}, dispatch);
 }
 export default connect(null, matchDispatchToProps)(OpratorBlock);
