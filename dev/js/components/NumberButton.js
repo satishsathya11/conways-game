@@ -1,12 +1,21 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
 
+
+const style = {
+  margin: 3,
+};
 class NumberButton extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
 		return (
-			<button onClick={() => this.props.handleClick(this.props.number)}>{this.props.number}</button>
+			
+				<MuiThemeProvider>
+			 <RaisedButton onClick={() =>this.props.handleClick(this.props.number)} style={style} label={this.props.number} primary={true}/>
+			 </MuiThemeProvider>
 		);
 	}
 }

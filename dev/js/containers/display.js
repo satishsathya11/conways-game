@@ -1,6 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
+const style = {
+	height: '60px',
+  width: '270px',
+  margin: '5px 5px 5px -10px',
+  fontSize:'35px',
+};
 class Display extends React.Component {
 	constructor(props) {
 		super(props);
@@ -9,7 +16,10 @@ class Display extends React.Component {
 	render() {
 		return (
 			<div>
-				<h2>{this.props.result}</h2>
+			
+				
+				<h2 style={style}>{this.props.result}</h2>
+			
 			</div>
 		);
 	}

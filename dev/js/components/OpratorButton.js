@@ -1,4 +1,10 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const style = {
+  margin: 3,
+};
 
 class OpratorButton extends React.Component {
 	constructor(props) {
@@ -6,7 +12,9 @@ class OpratorButton extends React.Component {
 	}
 	render() {
 		return (
-			<button onClick={() =>this.props.handleClick(this.props.oprator)}>{this.props.oprator}</button>
+			<MuiThemeProvider>
+			 <RaisedButton onClick={() =>this.props.handleClick(this.props.oprator)} style={style} label={this.props.oprator} secondary={true}/>
+			 </MuiThemeProvider>
 		);
 	}
 }

@@ -24,7 +24,7 @@ class NumberBlock extends React.Component {
         <NumberButton number={6} handleClick={this.handleValue}/><br/>
         <NumberButton number={7} handleClick={this.handleValue}/>
         <NumberButton number={8} handleClick={this.handleValue}/>
-        <NumberButton number={9} handleClick={this.handleValue}/>
+        <NumberButton number={9} handleClick={this.handleValue}/><br/>
         <NumberButton number={0} handleClick={this.handleValue}/>  
            
        
