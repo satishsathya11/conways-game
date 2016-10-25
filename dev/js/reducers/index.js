@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import reducerNum from './reducer-num';
+import reducerNum from './reducernum';
 
 
 /*

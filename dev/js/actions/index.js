@@ -1,29 +1,29 @@
-export const opratorFun = (oprator) => {
+export const autoState = () => {
   return {
-    type: 'OPRATORFUN',
-    payload:oprator
+    type: 'AUTO',
   }
 }
 
-export const equal = () => {
+export const next = () => {
   return {
-    type: 'EQUAL',
+    type: 'NEXTSTATE',
   }
 }
-export const clearDisplay = (val) => {
+export const random = (val) => {
   return {
-    type: 'CLEAR',
+    type: 'RANDOM',
     payload:val
   }
 }
-export const clickNum = (num) => {
+export const reset = () => {
   return {
-    type: 'CLICK_NUM',
-    payload:num
+    type: 'RESET',
   }
 }
-export const backspace = () => {
+export const toggle = (val) => {
   return {
-    type: 'BACK'
+    type: 'TOGGLE',
+    payload:val
+
   }
 }
