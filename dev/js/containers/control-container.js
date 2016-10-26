@@ -1,7 +1,7 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux'
-import {reset,next,autoState} from '../actions/index.js'
+import {reset,next,autoState,random} from '../actions/index.js'
 import Controler from '../components/Controls.js';
 
 let timer;
@@ -15,9 +15,8 @@ class Control extends React.Component {
      this.handleAuto = this.handleAuto.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-     console.log(nextProps.auto)
       if(nextProps.auto){
-      timer = setTimeout(()=>this.props.next(),500)
+      timer = setTimeout(()=>this.props.next(),200)
     }
     
   }
@@ -25,7 +24,7 @@ class Control extends React.Component {
     this.props.reset()
   }
   handleRandom(){
-   
+    this.props.random()
   }
   handleNext(){
     this.props.next()
@@ -36,7 +35,6 @@ class Control extends React.Component {
     
   }
   render() {
-    console.log(this.props.auto,"auto stae")
     return (
       <div>
         <Controler label="RESET" handleClick={this.handleReset} />
@@ -51,7 +49,8 @@ class Control extends React.Component {
 function matchDispatchToProps(dispatch){
     return bindActionCreators({reset:reset,
                                 next:next,
-                                autoState:autoState},dispatch);
+                                autoState:autoState,
+                                random:random},dispatch);
 }
 function mapStateToProps(state){
     return {
