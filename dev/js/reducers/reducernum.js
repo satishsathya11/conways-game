@@ -47,7 +47,7 @@ const reducerNum = (state = initialState, action) => {
     }
       return Object.assign({}, state, {
       lifeState: savedState,
-      auto:emptycell,
+      auto:emptycell?state.auto : false,
       count:state.count+1
       });
  
